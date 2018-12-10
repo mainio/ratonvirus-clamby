@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "ratonvirus", "~> 0.1.0"
-  spec.add_dependency "clamby", "~> 1.6.0"
+  spec.add_dependency "clamby", "~> 1.6"
 
   # Basic development dependencies.
   spec.add_development_dependency "rake", "~> 12.3"

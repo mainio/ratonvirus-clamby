@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     ratonvirus-clamby (0.1.0)
-      clamby (~> 1.6.0)
+      clamby (~> 1.6)
       ratonvirus (~> 0.1.0)
 
 GEM
