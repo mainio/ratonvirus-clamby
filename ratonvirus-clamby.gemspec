@@ -16,8 +16,8 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir[
     "lib/**/*",
+    "CHANGELOG.md",
     "LICENSE",
-    "Rakefile",
     "README.md"
   ]
 
