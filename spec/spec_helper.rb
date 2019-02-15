@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-require 'simplecov' if ENV['SIMPLECOV'] || ENV['CODECOV']
-if ENV['CODECOV']
-  require 'codecov'
+require "simplecov" if ENV["SIMPLECOV"] || ENV["CODECOV"]
+if ENV["CODECOV"]
+  require "codecov"
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
-require 'ratonvirus'
-require 'ratonvirus/clamby'
+require "ratonvirus"
+require "ratonvirus/clamby"
 
 RSpec.configure do |config|
-  config.before(:each) do
+  config.before do
     # Reset the config before each test
     Ratonvirus.reset
 
     # Configure a storage backend to be able to call scanner.virus?
-    Ratonvirus.configure do |config|
-      config.storage = :filepath
-      config.addons = []
+    Ratonvirus.configure do |rv_config|
+      rv_config.storage = :filepath
+      rv_config.addons = []
     end
   end
 end

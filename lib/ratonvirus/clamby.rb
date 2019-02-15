@@ -1,7 +1,9 @@
-require 'clamby'
+# frozen_string_literal: true
 
-require_relative 'clamby/version'
-require_relative 'scanner/clamby'
+require "clamby"
+
+require_relative "clamby/version"
+require_relative "scanner/clamby"
 
 module Ratonvirus
   module Clamby

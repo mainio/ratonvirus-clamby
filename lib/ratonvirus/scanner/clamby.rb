@@ -16,11 +16,11 @@ module Ratonvirus
         # We want Ratonvirus to report issues on file missing errors.
         error_file_missing: true,
         # No output is required not to fill the logs. The scanning errors
-        output_level: 'off',
+        output_level: "off"
       ).freeze
 
       class << self
-        def configure(config={})
+        def configure(config = {})
           ::Clamby.configure(config)
         end
 
@@ -32,7 +32,9 @@ module Ratonvirus
         # system is executable.
         def executable?
           # Clamby should return `nil` when clamscan is not available.
+          # rubocop:disable Style/DoubleNegation
           !!::Clamby::Command.clamscan_version
+          # rubocop:enable Style/DoubleNegation
         end
       end
 
@@ -44,32 +46,33 @@ module Ratonvirus
       end
 
       protected
-        def run_scan(path)
-          # In case the file is not present at all, scanning should always pass
-          # because nil is not a virus.
-          return if path.nil?
 
-          begin
-            errors << :antivirus_virus_detected if ::Clamby.virus?(path)
-          rescue ::Clamby::ClamscanClientError
-            # This can happen e.g. if the clamdscan utility does not have access
-            # to read the file path. For debugging, try to run the clamdscan
-            # utility manually for the same file:
-            # clamdscan /path/to/file.pdf
-            #
-            # Also, make sure that the file uploads store directory is readable
-            # by the clamdscan utility. E.g. /path/to/app/public/uploads/tmp.
-            #
-            # Another possible reason is that in case there are too many
-            # concurrent virus checks ongoing, it may also trigger this error.
-            errors << :antivirus_client_error
-          rescue ::Clamby::FileNotFound
-            # This should be pretty rare since the scanner should not be even
-            # called when the file is not available. As the storage backend may
-            # be configured, this may still happen with some storage backends.
-            errors << :antivirus_file_not_found
-          end
+      def run_scan(path)
+        # In case the file is not present at all, scanning should always pass
+        # because nil is not a virus.
+        return if path.nil?
+
+        begin
+          errors << :antivirus_virus_detected if ::Clamby.virus?(path)
+        rescue ::Clamby::ClamscanClientError
+          # This can happen e.g. if the clamdscan utility does not have access
+          # to read the file path. For debugging, try to run the clamdscan
+          # utility manually for the same file:
+          # clamdscan /path/to/file.pdf
+          #
+          # Also, make sure that the file uploads store directory is readable
+          # by the clamdscan utility. E.g. /path/to/app/public/uploads/tmp.
+          #
+          # Another possible reason is that in case there are too many
+          # concurrent virus checks ongoing, it may also trigger this error.
+          errors << :antivirus_client_error
+        rescue ::Clamby::FileNotFound
+          # This should be pretty rare since the scanner should not be even
+          # called when the file is not available. As the storage backend may
+          # be configured, this may still happen with some storage backends.
+          errors << :antivirus_file_not_found
         end
+      end
 
       # Make sure we are starting up with the default configuration.
       reset
