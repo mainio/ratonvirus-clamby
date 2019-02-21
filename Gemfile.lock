@@ -83,4 +83,4 @@ DEPENDENCIES
   simplecov (~> 0.16.0)
 
 BUNDLED WITH
-   1.16.2
+   2.0.1
