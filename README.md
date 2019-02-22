@@ -133,8 +133,8 @@ possible temporary paths of CarrierWave.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ratonvirus'
-gem 'ratonvirus-clamby'
+gem "ratonvirus"
+gem "ratonvirus-clamby"
 ```
 
 Then execute:
