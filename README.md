@@ -123,10 +123,11 @@ the application folder or the folder where the users are uploading the files in
 order to ensure that ClamAV daemon is able to access that folder and read files
 from it.
 
-Also note that Decidim uses
-[CarrierWave](https://github.com/carrierwaveuploader/carrierwave) to handle its
-file uploads and processing on the server, so make sure you are also testing the
-possible temporary paths of CarrierWave.
+Also note that applications using
+[CarrierWave](https://github.com/carrierwaveuploader/carrierwave) or other file
+upload management system may store temporary files in specific configured
+temporary paths (e.g. `tmp/storage`). Make sure you are also testing that the
+files are scannable in all possible temporary paths.
 
 ## Installation
 
