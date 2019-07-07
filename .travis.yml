@@ -2,5 +2,5 @@ language: ruby
 rvm:
  - 2.5.3
 before_install:
-  # Install the bundler gem
-  - gem install bundler
+  # Install the bundler gem (version matchign Gemfile.lock)
+  - gem install bundler -v '2.0.1'
