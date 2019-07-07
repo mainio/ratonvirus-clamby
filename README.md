@@ -178,8 +178,6 @@ Shown when the `clamdscan` executable returns with the exit code other than 0 or
 
 ### antivirus_client_error ("could not be processed for virus scan")
 
-This means that the given file contains a virus detected by ClamAV.
-
 In this case the `clamdscan` executable did not finish its work successfully and
 an error was produced. This can be generally caused by the `clamav-daemon`
 service because of few different reasons:
