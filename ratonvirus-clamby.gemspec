@@ -25,16 +25,16 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "clamby", "~> 1.6"
-  spec.add_dependency "ratonvirus", "~> 0.1.0"
+  spec.add_dependency "ratonvirus", "~> 0.2.0"
 
   # Basic development dependencies.
-  spec.add_development_dependency "rake", "~> 12.3"
+  spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 
   # Code coverage
-  spec.add_development_dependency "simplecov", "~> 0.16.0"
+  spec.add_development_dependency "simplecov", "~> 0.18.0"
 
   # Rubocop linter
-  spec.add_development_dependency "rubocop", "~> 0.64.0"
-  spec.add_development_dependency "rubocop-rspec", "~> 1.32"
+  spec.add_development_dependency "rubocop", "~> 0.86.0"
+  spec.add_development_dependency "rubocop-rspec", "~> 1.40"
 end
