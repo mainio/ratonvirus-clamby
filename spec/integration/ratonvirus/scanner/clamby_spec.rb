@@ -98,8 +98,9 @@ describe Ratonvirus::Scanner::Clamby do
 
   def system_exit_with(exit_code, *args)
     # Override the run call to return the correct result
-    args << { out: File::NULL }
-    allow(runner).to receive(:system).with("clamdscan", *args) do
+    runner_args = { out: File::NULL }
+    cmd = "clamdscan #{args.join(" ")}"
+    allow(runner).to receive(:system).with(cmd, runner_args) do
       define_exit_code(exit_code)
     end
   end

@@ -32,9 +32,7 @@ module Ratonvirus
         # system is executable.
         def executable?
           # Clamby should return `nil` when clamscan is not available.
-          # rubocop:disable Style/DoubleNegation
           !!::Clamby::Command.clamscan_version
-          # rubocop:enable Style/DoubleNegation
         end
       end
 
