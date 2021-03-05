@@ -48,21 +48,24 @@ describe Ratonvirus::Scanner::Clamby do
   describe ".executable?" do
     context "when Clamby::Command.clamscan_version is nil" do
       it "returns false" do
-        expect(Clamby::Command).to receive(:clamscan_version).and_return(nil)
+        allow(Clamby::Command).to receive(:clamscan_version).and_return(nil)
+        expect(Clamby::Command).to receive(:clamscan_version)
         expect(described_class.executable?).to be(false)
       end
     end
 
     context "when Clamby::Command.clamscan_version is false" do
       it "returns false" do
-        expect(Clamby::Command).to receive(:clamscan_version).and_return(false)
+        allow(Clamby::Command).to receive(:clamscan_version).and_return(false)
+        expect(Clamby::Command).to receive(:clamscan_version)
         expect(described_class.executable?).to be(false)
       end
     end
 
     context "when Clamby::Command.clamscan_version is true" do
       it "returns false" do
-        expect(Clamby::Command).to receive(:clamscan_version).and_return(true)
+        allow(Clamby::Command).to receive(:clamscan_version).and_return(true)
+        expect(Clamby::Command).to receive(:clamscan_version)
         expect(described_class.executable?).to be(true)
       end
     end
@@ -107,7 +110,8 @@ describe Ratonvirus::Scanner::Clamby do
 
       context "with Clamby.virus? returning false" do
         it "does not add any errors" do
-          expect(Clamby).to receive(:virus?).with(path).and_return(false)
+          allow(Clamby).to receive(:virus?).with(path).and_return(false)
+          expect(Clamby).to receive(:virus?).with(path)
           subject.virus?(path)
           expect(subject.errors).to eq([])
         end
@@ -115,7 +119,8 @@ describe Ratonvirus::Scanner::Clamby do
 
       context "with Clamby.virus? returning true" do
         it "adds the antivirus_virus_detected error" do
-          expect(Clamby).to receive(:virus?).with(path).and_return(true)
+          allow(Clamby).to receive(:virus?).with(path).and_return(true)
+          expect(Clamby).to receive(:virus?).with(path)
           subject.virus?(path)
           expect(subject.errors).to eq([:antivirus_virus_detected])
         end
