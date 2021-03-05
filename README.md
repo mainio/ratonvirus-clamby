@@ -2,7 +2,7 @@
 
 Developed by [Mainio Tech](https://www.mainiotech.fi/).
 
-[![Build Status](https://api.travis-ci.org/mainio/ratonvirus-clamby.svg?branch=master)](https://travis-ci.org/mainio/ratonvirus-clamby)
+[![Build Status](https://github.com/mainio/ratonvirus-clamby/actions/workflows/ci_ratonvirus_clamby.yml/badge.svg)](https://github.com/mainio/ratonvirus-clamby/actions)
 [![codecov](https://codecov.io/gh/mainio/ratonvirus-clamby/branch/master/graph/badge.svg)](https://codecov.io/gh/mainio/ratonvirus-clamby)
 
 This gem provides a [Clamby](https://github.com/kobaltz/clamby) scanner for
