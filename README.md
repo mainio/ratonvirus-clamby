@@ -144,13 +144,18 @@ Then execute:
 $ bundle
 ```
 
-And finally configure the scanner for Ratonvirus:
+And finally configure the scanner for Ratonvirus in your application's
+`config/initializers/ratonvirus.rb`:
 
 ```ruby
+# config/initializers/ratonvirus.rb
 Ratonvirus.configure do |config|
   config.scanner = :clamby
 end
 ```
+
+See further configuration instructions from the
+[Ratonvirus documentation](https://github.com/mainio/ratonvirus).
 
 ## Possible scanning errors
 
