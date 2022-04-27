@@ -1,6 +1,10 @@
-# v0.3.1
+# v0.4.0
 
 Support for Rails 7
+
+Changed:
+
+- Minimum Ruby version 2.7
 
 # v0.3.0
 
