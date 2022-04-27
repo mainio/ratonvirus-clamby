@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ratonvirus-clamby (0.3.1)
+    ratonvirus-clamby (0.4.0)
       clamby (~> 1.6)
       ratonvirus (~> 0.4.0)
 
