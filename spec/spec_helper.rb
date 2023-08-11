@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "simplecov"
+require "simplecov" if ENV["SIMPLECOV"]
 require "ratonvirus"
 require "ratonvirus/clamby"
 
