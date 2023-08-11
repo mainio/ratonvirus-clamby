@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "simplecov"
 require "ratonvirus"
 require "ratonvirus/clamby"
 
