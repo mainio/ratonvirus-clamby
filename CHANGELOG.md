@@ -1,3 +1,7 @@
+# v0.5.0
+
+Support for Ratonvirus 0.5.0.
+
 # v0.4.0
 
 Support for Rails 7
