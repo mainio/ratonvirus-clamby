@@ -7,7 +7,7 @@ require "ratonvirus/clamby/version"
 Gem::Specification.new do |spec|
   spec.name = "ratonvirus-clamby"
   spec.version = Ratonvirus::Clamby::VERSION
-  spec.required_ruby_version = ">= 2.5"
+  spec.required_ruby_version = ">= 2.7"
   spec.authors = ["Antti Hukkanen"]
   spec.email = ["antti.hukkanen@mainiotech.fi"]
 
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "clamby", "~> 1.6"
-  spec.add_dependency "ratonvirus", "~> 0.5.0"
+  spec.add_dependency "ratonvirus", "~> 0.6.0"
 
   # Basic development dependencies.
   spec.add_development_dependency "rake", "~> 13.0"
