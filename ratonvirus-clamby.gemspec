@@ -7,7 +7,7 @@ require "ratonvirus/clamby/version"
 Gem::Specification.new do |spec|
   spec.name = "ratonvirus-clamby"
   spec.version = Ratonvirus::Clamby::VERSION
-  spec.required_ruby_version = ">= 2.7"
+  spec.required_ruby_version = ">= 3.2"
   spec.authors = ["Antti Hukkanen"]
   spec.email = ["antti.hukkanen@mainiotech.fi"]
 
@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.description = "Provides ClamAV scanner backed by Clamby for the Ratonvirus gem."
   spec.homepage = "https://github.com/mainio/ratonvirus-clamby"
   spec.license = "MIT"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = Dir[
     "lib/**/*",
@@ -26,16 +27,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "clamby", "~> 1.6"
-  spec.add_dependency "ratonvirus", "~> 0.6.0"
-
-  # Basic development dependencies.
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-
-  # Code coverage
-  spec.add_development_dependency "simplecov", "~> 0.18.0"
-
-  # Rubocop linter
-  spec.add_development_dependency "rubocop", "~> 1.11.0"
-  spec.add_development_dependency "rubocop-rspec", "~> 2.2.0"
 end

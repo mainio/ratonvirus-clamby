@@ -39,7 +39,8 @@ describe Ratonvirus::Scanner::Clamby do
 
   describe "#virus?" do
     # Force availability of the scanner to avoid unnecessary .executable? checks
-    let(:subject) { described_class.new(force_availability: true) }
+    subject { described_class.new(force_availability: true) }
+
     let(:scan_args) { ["--no-summary"] }
 
     context "when file does not exist" do

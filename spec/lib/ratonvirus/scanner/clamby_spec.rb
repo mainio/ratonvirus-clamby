@@ -3,7 +3,8 @@
 require "spec_helper"
 
 describe Ratonvirus::Scanner::Clamby do
-  let(:subject) { described_class.new(config) }
+  subject { described_class.new(config) }
+
   let(:config) { {} }
 
   it "has correct default configurations" do

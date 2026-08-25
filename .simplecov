@@ -2,7 +2,7 @@
 
 if ENV["SIMPLECOV"]
   SimpleCov.start do
-    root ENV["ENGINE_ROOT"]
+    root ENV.fetch("ENGINE_ROOT", nil)
 
     add_filter "lib/ratonvirus/clamby/version.rb"
     add_filter "spec/"
