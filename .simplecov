@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 if ENV["SIMPLECOV"]
-  SimpleCov.start do
-    root ENV.fetch("ENGINE_ROOT", nil)
+  SimpleCov.root ENV.fetch("ENGINE_ROOT", nil)
 
-    add_filter "lib/ratonvirus/clamby/version.rb"
-    add_filter "spec/"
-  end
+  SimpleCov.skip "lib/ratonvirus/clamby/version.rb"
+  SimpleCov.skip "spec/"
 
   SimpleCov.command_name ENV["COMMAND_NAME"] || File.basename(Dir.pwd)
 

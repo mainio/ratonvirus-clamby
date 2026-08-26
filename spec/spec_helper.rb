@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
-require "simplecov" if ENV["SIMPLECOV"]
 require "ratonvirus"
 require "ratonvirus/clamby"
+
+if ENV["SIMPLECOV"]
+  require "simplecov"
+  SimpleCov.start
+end
 
 RSpec.configure do |config|
   config.before do
