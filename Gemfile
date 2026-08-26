@@ -2,8 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "ratonvirus", github: "mainio/ratonvirus", branch: "fix/activestorage-attach-scan"
-
 group :development do
   # Basic development dependencies.
   gem "rake", "~> 13.0"
