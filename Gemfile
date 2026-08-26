@@ -4,23 +4,18 @@ source "https://rubygems.org"
 
 group :development do
   # Basic development dependencies.
-  gem "rake", "~> 13.0"
-  gem "rspec", "~> 3.0"
-
-  # Code coverage
-  gem "simplecov", "~> 0.18.0"
+  gem "rake", "~> 13.4"
+  gem "rspec", "~> 3.13"
 
   # Rubocop linter
-  gem "rubocop", "~> 1.65"
-  gem "rubocop-rspec", "~> 3.0"
+  gem "rubocop", "~> 1.90"
+  gem "rubocop-rspec", "~> 3.10"
 end
 
 group :test do
+  # Code coverage
+  gem "simplecov"
   gem "simplecov-cobertura"
-
-  # Fix issue with simplecov-cobertura
-  # See: https://github.com/jessebs/simplecov-cobertura/pull/44
-  gem "rexml", "3.4.1"
 end
 
 gemspec
