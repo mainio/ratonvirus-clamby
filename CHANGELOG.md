@@ -1,3 +1,11 @@
+# v0.6.0
+
+Support for Ratonvirus 0.6.0 and therefore Rails 8.
+
+Changed:
+
+- Minimum Ruby version 3.2
+
 # v0.5.0
 
 Support for Ratonvirus 0.5.0.
