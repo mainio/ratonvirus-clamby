@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 if ENV["SIMPLECOV"]
-  SimpleCov.root ENV.fetch("ENGINE_ROOT", nil)
-
   SimpleCov.skip "lib/ratonvirus/clamby/version.rb"
   SimpleCov.skip "spec/"
 
